@@ -13,7 +13,7 @@ public class CheckerboardKarel extends SuperKarel {
 
 	public void run() {
 	
-	while(frontIsClear()){
+	while(frontIsClear() || leftIsClear()){
 	oddColumn();
 	evenColumn();
 	}
