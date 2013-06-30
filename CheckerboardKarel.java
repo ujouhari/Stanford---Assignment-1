@@ -14,7 +14,7 @@ public class CheckerboardKarel extends SuperKarel {
 	public void run() {
 	
 		
-	while(frontIsClear() || leftIsClear()){
+	while(frontIsClear()){
 	oddColumn();
 	evenColumn();
 	}
