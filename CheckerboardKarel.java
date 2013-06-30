@@ -65,11 +65,25 @@ public class CheckerboardKarel extends SuperKarel {
 		  	
 	
 	private void move_left() {
-		
+		if(frontIsClear()) {
+			move();
+		}
+		else {
+			turnRight ();
+			  if(frontIsClear()) {
+				  move();
+				  turnRight();
+			  }
+			  else {
+				   p_solved =1;
+			  }
+			  }
+				  
+		}
 	
 	}
 	
-	}
+	
 
 
 
