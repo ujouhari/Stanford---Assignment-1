@@ -19,22 +19,22 @@ public class CheckerboardKarel extends SuperKarel {
 			putBeeper();
 			int count = 0;
 			
-			if (flag == 1 && p_solved ==0 && count < 2) {
+			if (flag == 1 && p_solved == 0 && count < 2) {
 				move_right();
 				count = count + 1;
 			    }
 
-			if (flag == 0 && p_solved ==0 && count < 2) {
+			if (flag == 0 && p_solved == 0 && count < 2) {
 				move_left();
 				count = count + 1;
 			    }
 
-			if (flag == 1 && p_solved ==0 && count < 2) {
+			if (flag == 1 && p_solved == 0 && count < 2) {
 				move_right();
 				count = count + 1;
 			    }
 
-			if (flag == 0 && p_solved ==0 && count < 2) {
+			if (flag == 0 && p_solved == 0 && count < 2) {
 				move_left();
 				count = count + 1;
 			    }
