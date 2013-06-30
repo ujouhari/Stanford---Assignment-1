@@ -28,10 +28,11 @@ public class CheckerboardKarel extends SuperKarel {
 					
 				}
 			}
+	}
 	turnRight();
 	while (rightIsClear()){
 		move();
-	}
+	
 	}
 	
 	}
