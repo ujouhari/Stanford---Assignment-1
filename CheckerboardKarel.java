@@ -44,8 +44,8 @@ public class CheckerboardKarel extends SuperKarel {
 	
 	private void moveToEvenRow(){
 		if(frontIsBlocked()){
-			turnLeft();
 			if(noBeepersPresent()){
+				turnLeft();
 				if(frontIsClear()){
 					move();
 					turnLeft();
@@ -54,6 +54,7 @@ public class CheckerboardKarel extends SuperKarel {
 			}
 			
 			else{
+				turnLeft();
 				if(frontIsClear()){
 					move();
 					turnLeft();
@@ -66,8 +67,8 @@ public class CheckerboardKarel extends SuperKarel {
 	
 	private void moveToOddRow(){
 		if(frontIsBlocked()){
-			turnRight();
 			if(noBeepersPresent()){
+				turnRight();
 				if(frontIsClear()){
 					move();
 					turnRight();
@@ -76,6 +77,7 @@ public class CheckerboardKarel extends SuperKarel {
 			}
 			
 			else{
+				turnRight();
 				if(frontIsClear()){
 					move();
 					turnRight();
