@@ -20,7 +20,7 @@ public class CheckerboardKarel extends SuperKarel {
 			// int count = 0;
 			// move();
 			
-			if (facingEast() == 1) {
+			if (facingEast()) {
 				move_right();
 				// count = count + 1;
 			    }
