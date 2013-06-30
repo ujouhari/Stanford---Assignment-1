@@ -11,15 +11,45 @@ import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
 
-	public void run(){
-		turnLeft();
+public void run() {
 		
-		while (frontIsClear()) {
-			
-			move();
-			putBeeper();
-				
+		
+		moveToNewspaper();
+		pickNewspaper();
+		returnToStartPoint();
+		
+	}
+	
+	
+	private void moveToNewspaper() {
+		
+		move();
+		move();
+		turnRight();
+		move();
+		turnLeft();
+		move();
+		
+	}
+	
+	private void pickNewspaper() {
+		while (beepersPresent()) {
+			pickBeeper();
 		}
 		
+	}
+	
+	private void returnToStartPoint(){
+		
+		turnLeft();
+		turnLeft();
+		move();
+		turnRight();
+		move();
+		turnLeft();
+		move();
+		move();
+		turnLeft();
+		turnLeft();
 	}
 }
