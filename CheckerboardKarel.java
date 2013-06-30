@@ -28,8 +28,9 @@ public class CheckerboardKarel extends SuperKarel {
 		safeToMove();
 		safeToMove();
 	}
-	turnRight();
+	
 	if (rightIsClear()){
+		turnRight();
 		move();
 		}
 	
@@ -42,8 +43,9 @@ public class CheckerboardKarel extends SuperKarel {
 		safeToMove();
 		safeToMove();
 	}
-	turnLeft();
+	
 	if (rightIsClear()){
+		turnLeft();
 		move();
 		}
 
