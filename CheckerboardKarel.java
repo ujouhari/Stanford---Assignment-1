@@ -17,29 +17,29 @@ public class CheckerboardKarel extends SuperKarel {
 		
 		while (p_solved == 0) {
 			 putBeeper();
-			// int count = 0;
+			 int count = 0;
 			// move();
 			
 			if (facingEast()) {
 				move_right();
-				// count = count + 1;
+				 count = count + 1;
 			    }
-/*
-			if (flag == 0 && p_solved == 0 && count < 2) {
+
+			if (facingWest() && p_solved == 0 && count < 2) {
 				move_left();
 				count = count + 1;
 			    }
 
-			if (flag == 1 && p_solved == 0 && count < 2) {
+			if (facingEast() && p_solved == 0 && count < 2) {
 				move_right();
 				count = count + 1;
 			    }
 
-			if (flag == 0 && p_solved == 0 && count < 2) {
+			if (facingWest() && p_solved == 0 && count < 2) {
 				move_left();
 				count = count + 1;
 			    }
-			    */
+			    
 			}
 		}
 	
