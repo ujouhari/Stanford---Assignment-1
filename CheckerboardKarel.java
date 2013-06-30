@@ -11,45 +11,51 @@ import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
 
-public void run() {
-		
-		
-		moveToNewspaper();
-		pickNewspaper();
-		returnToStartPoint();
-		
+	public void run() {
+		fixColumn();
 	}
-	
-	
-	private void moveToNewspaper() {
 		
-		move();
-		move();
-		turnRight();
-		move();
+	private void fixColumn() {
 		turnLeft();
-		move();
 		
-	}
-	
-	private void pickNewspaper() {
-		while (beepersPresent()) {
-			pickBeeper();
+			while(frontIsClear()){
+				if (noBeepersPresent()){
+					putBeeper();
+				}
+				
+				move();
+			}
+			if (noBeepersPresent()){
+				putBeeper();
+			}
+		
+		moveBackward();
+		
+		if (frontIsClear()){
+		
+		moveToNextColumn();
 		}
-		
 	}
 	
-	private void returnToStartPoint(){
+	private void moveBackward(){
+		turnAround();
+		CheckForWall();
+		turnLeft();
 		
-		turnLeft();
-		turnLeft();
-		move();
-		turnRight();
-		move();
-		turnLeft();
-		move();
-		move();
-		turnLeft();
-		turnLeft();
 	}
+	private void moveToNextColumn(){
+		if (frontIsClear()){
+		for (int i=0;i<=3;i++){
+			move();	
+		}
+		}
+		fixColumn();
+		
+	}
+	private void CheckForWall(){
+		while (frontIsClear()){
+			move();
+	}
+		
+}
 }
