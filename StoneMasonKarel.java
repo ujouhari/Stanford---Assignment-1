@@ -51,7 +51,7 @@ public class StoneMasonKarel extends SuperKarel {
 		
 	}
 	private void CheckForWall(){
-		while (frontIsClear()){
+		if (frontIsClear()){
 			move();
 	}
 		
