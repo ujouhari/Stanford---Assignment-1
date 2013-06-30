@@ -11,8 +11,97 @@ import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
 	
+	public void run(){
+		putBeeper();
+		safeToMove();
+		while(frontIsClear()){
+			oddRowArrangement();
+			evenRowArrangement();
+			}
+	}
+	
+	private void oddRowArrangement(){
+		while(facingEast()){
+			makeCheckerDesign();
+		}
+		moveToEvenRow();
+	}
+	
+	private void evenRowArrangement(){
+		while(facingWest()){
+			makeCheckerDesign();
+		}
+		moveToOddRow();
+	}
+	
+	private void makeCheckerDesign(){
+		if(frontIsClear()){
+			move();
+		}
+		if(frontIsClear()){
+			move();
+		}
+		putBeeper();
+	}
+	
+	private void moveToEvenRow(){
+		if(frontIsBlocked()){
+			turnLeft();
+			if(noBeepersPresent()){
+				if(frontIsClear()){
+					move();
+					turnLeft();
+					putBeeper();
+				}
+			}
+			
+			else{
+				if(frontIsClear()){
+					move();
+					turnLeft();
+					move();
+					putBeeper();
+				}
+			}
+		}
+	}
+	
+	private void moveToOddRow(){
+		if(frontIsBlocked()){
+			turnRight();
+			if(noBeepersPresent()){
+				if(frontIsClear()){
+					move();
+					turnRight();
+					putBeeper();
+				}
+			}
+			
+			else{
+				if(frontIsClear()){
+					move();
+					turnRight();
+					move();
+					putBeeper();
+				}
+			}
+		}
+		
+	}
+	
+	private void safeToMove(){
+		if(frontIsBlocked()){
+			turnLeft();
+			while(frontIsClear()){
+				makeCheckerDesign();
+			}
+			
+		}
+	}
+}
+	
 
-		public void run() {
+		/*public void run() {
 			putBeeper();
 			checkWall();
 			while (frontIsClear()) {
@@ -97,7 +186,7 @@ public class CheckerboardKarel extends SuperKarel {
 		
 	}
 	
-	
+	*/
 	
 	
    /* // public static int flag =1;
