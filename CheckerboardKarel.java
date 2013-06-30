@@ -46,7 +46,7 @@ public class CheckerboardKarel extends SuperKarel {
 		safeToMove();
 	}
 	
-	if (rightIsClear()){
+	if (leftIsClear()){
 		turnLeft();
 		if(frontIsClear()) {
 		move();
