@@ -38,9 +38,10 @@ public class StoneMasonKarel extends SuperKarel {
 		
 	}
 	private void moveToNextColumn(){
-		CheckForWall();
+		if (FrontIsClear()){
 		for (int i=0;i<=3;i++){
 			move();	
+		}
 		}
 		fixColumn();
 		
