@@ -27,7 +27,25 @@ public class StoneMasonKarel extends SuperKarel {
 			}
 			move();
 		}
-	
+		moveBackward();
+		moveToNextColumn();
 	}
 	
+	private void moveBackward(){
+		turnRight();
+		CheckForWall();
+		turnLeft();
+		
+	}
+	private void moveToNextColumn(){
+		for (int i=0;i<=3;i++){
+			CheckForWall();
+		}
+	}
+	private void CheckForWall(){
+		while (frontIsClear()){
+			move();
+	}
+		
+	}
 }
