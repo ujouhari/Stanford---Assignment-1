@@ -42,10 +42,11 @@ public class CheckerboardKarel extends SuperKarel {
 		safeToMove();
 		safeToMove();
 	}
+	
+		}
 	turnLeft();
 	if (rightIsClear()){
 		move();
-		}
 	}
 	
 	private void safeToMove(){
