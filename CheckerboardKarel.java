@@ -13,12 +13,18 @@ public class CheckerboardKarel extends SuperKarel {
 
 	public void run() {
 	
+		
 	while(frontIsClear() || leftIsClear()){
 	oddColumn();
 	evenColumn();
 	}
 	
 	}
+	
+	private void move_robo() {
+		
+	}
+	
 	
 	private void oddColumn(){
 
