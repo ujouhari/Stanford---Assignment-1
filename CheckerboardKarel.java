@@ -13,7 +13,10 @@ public class CheckerboardKarel extends SuperKarel {
 
 	public void run() {
 	
+	while(frontIsClear()){
 	oddColumn();
+	evenColumn();
+	}
 	
 	}
 	
@@ -28,9 +31,21 @@ public class CheckerboardKarel extends SuperKarel {
 	turnRight();
 	if (rightIsClear()){
 		move();
+		}
 	
 	}
 	
+	private void evenColumn(){
+	turnRight();
+	while(frontIsClear()){
+		putBeeper();
+		safeToMove();
+		safeToMove();
+	}
+	turnLeft();
+	if (rightIsClear()){
+		move();
+		}
 	}
 	
 	private void safeToMove(){
