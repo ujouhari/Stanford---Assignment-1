@@ -31,8 +31,9 @@ public class StoneMasonKarel extends SuperKarel {
 		if (noBeepersPresent()){
 			putBeeper();
 		}	
-		if (frontIsClear()){
 		moveBackward();
+		if (frontIsClear()){
+		
 		moveToNextColumn();
 		}
 	}
