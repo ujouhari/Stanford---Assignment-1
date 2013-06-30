@@ -16,7 +16,7 @@ public class CheckerboardKarel extends SuperKarel {
 		
 		
 		while (p_solved == 0) {
-			putBeeper();
+			// putBeeper();
 			int count = 0;
 			
 			if (flag == 1 && p_solved == 0 && count < 2) {
