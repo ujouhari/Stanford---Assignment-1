@@ -35,9 +35,7 @@ public class CheckerboardKarel extends SuperKarel {
 	}
 	
 	private void makeCheckerDesign(){
-		if(frontIsClear()){
 			move();
-		}
 		if(frontIsClear()){
 			move();
 		}
