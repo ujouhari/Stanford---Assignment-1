@@ -21,9 +21,6 @@ public class CheckerboardKarel extends SuperKarel {
 	
 	}
 	
-	private void move_robo() {
-		
-	}
 	
 	
 	private void oddColumn(){
