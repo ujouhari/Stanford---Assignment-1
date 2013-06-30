@@ -12,8 +12,8 @@ import stanford.karel.*;
 public class CheckerboardKarel extends SuperKarel {
 
 	public void run() {
-	turnLeft();
-	while(frontIsClear()){
+	
+	while(frontIsClear()||leftIsClear()){
 	oddColumn();
 	evenColumn();
 	}
@@ -22,7 +22,7 @@ public class CheckerboardKarel extends SuperKarel {
 	
 	private void oddColumn(){
 
-	
+	turnLeft();
 	while(frontIsClear()){
 		putBeeper();
 		safeToMove();
