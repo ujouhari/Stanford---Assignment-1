@@ -31,8 +31,10 @@ public class StoneMasonKarel extends SuperKarel {
 		if (noBeepersPresent()){
 			putBeeper();
 		}	
+		if (frontIsClear()){
 		moveBackward();
 		moveToNextColumn();
+		}
 	}
 	
 	private void moveBackward(){
@@ -51,7 +53,7 @@ public class StoneMasonKarel extends SuperKarel {
 		
 	}
 	private void CheckForWall(){
-		if (frontIsClear()){
+		while (frontIsClear()){
 			move();
 	}
 		
