@@ -10,21 +10,21 @@
 import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
-    public static int flag =1;
-    public static int p_solved = 0;
+    // public static int flag =1;
+     public static int p_solved = 0;
 	public void run() {
 		
 		
 		while (p_solved == 0) {
-			// putBeeper();
-			int count = 0;
+			 putBeeper();
+			// int count = 0;
 			// move();
 			
-			if (flag == 1 && p_solved == 0) {
+			if (facingEast() == 1) {
 				move_right();
-				count = count + 1;
+				// count = count + 1;
 			    }
-
+/*
 			if (flag == 0 && p_solved == 0 && count < 2) {
 				move_left();
 				count = count + 1;
@@ -39,6 +39,7 @@ public class CheckerboardKarel extends SuperKarel {
 				move_left();
 				count = count + 1;
 			    }
+			    */
 			}
 		}
 	
@@ -48,7 +49,7 @@ public class CheckerboardKarel extends SuperKarel {
 	  }
 		   else {
 			   turnLeft();
-			   	flag = 0;
+			   	// flag = 0;
 			   	   if(frontIsClear()) {
 			   		   move();
 			   		   turnLeft();
