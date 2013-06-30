@@ -45,9 +45,8 @@ public class CheckerboardKarel extends SuperKarel {
 		safeToMove();
 		safeToMove();
 	}
-	if(noBeepersPresent()){
-		putBeeper();
-	}
+	
+	
 	
 	if (rightIsClear()){
 		turnRight();
