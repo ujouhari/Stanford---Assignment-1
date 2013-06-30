@@ -10,7 +10,97 @@
 import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
-    // public static int flag =1;
+	
+
+		public void run() {
+			putBeeper();
+			checkWall();
+			while (frontIsClear()) {
+				beepersEast();
+				beepersWest();
+			}
+		}
+		private void beepersEast() {
+			while (facingEast()) {
+				move();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+				}
+				upEast();
+			}
+		}
+		private void upEast() {
+			if (frontIsBlocked()) {
+				if (noBeepersPresent()) {
+					turnLeft();
+					if (frontIsClear()) {
+						move();
+						turnLeft();
+						putBeeper();
+					}
+				}
+				else {
+					turnLeft();
+					if (frontIsClear()) {
+						move();
+						turnLeft();
+						move();
+						putBeeper();
+					}
+				}
+			}
+		}
+		private void beepersWest() {
+			while (facingWest()) {
+				move();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+				}
+				upWest();
+			}
+		}
+		private void upWest() {
+			if (frontIsBlocked()) {
+				if (noBeepersPresent()) {
+					turnRight();
+					if (frontIsClear()) {
+						move();
+						turnRight();
+						putBeeper();
+					}
+				}
+				else {
+					turnRight();
+					if (frontIsClear()) {
+						move();
+						turnRight();
+						move();
+						putBeeper();
+					}
+				}
+			}
+		}
+		private void checkWall() {
+			if (frontIsBlocked()) {
+				turnLeft();
+				while (frontIsClear()) {
+					move();
+					if (frontIsClear()) {
+						move();
+						putBeeper();
+					}
+				}
+			}
+		}
+		
+	}
+	
+	
+	
+	
+   /* // public static int flag =1;
      public static int p_solved = 0;
 	public void run() {
 		
@@ -83,7 +173,7 @@ public class CheckerboardKarel extends SuperKarel {
 	
 	}
 	
-	
+	*/
 
 
 
