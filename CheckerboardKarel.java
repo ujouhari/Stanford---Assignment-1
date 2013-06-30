@@ -15,7 +15,7 @@ public class CheckerboardKarel extends SuperKarel {
 	
 	while(frontIsClear() || leftIsClear()){
 	oddColumn();
-	evenColumn();
+	// evenColumn();
 	}
 	
 	}
