@@ -10,10 +10,11 @@
 import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
-
+    public static int flag =0;
+    public static int p_solved = 0;
 	public void run() {
-		int p_solved = 0;
-		int flag = 0;
+		
+		
 		while (p_solved == 0) {
 			putBeeper();
 			int count = 0;
@@ -41,8 +42,25 @@ public class CheckerboardKarel extends SuperKarel {
 		}
 	
 	private void move_right() {
-	  
-	}
+	  if(frontIsClear()) {
+		   move();
+	  }
+		   else {
+			   turnLeft();
+			   	flag = 0;
+			   	   if(frontIsClear()) {
+			   		   move();
+			   		   turnLeft();
+			   	   }
+			   	   else
+			   	   {
+			   		   p_solved = 1;
+			   	   }
+			   			   
+			   		   
+			   	   }
+		   }
+		  	
 	
 	private void move_left() {
 		
