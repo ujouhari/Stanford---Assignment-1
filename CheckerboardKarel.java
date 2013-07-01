@@ -52,15 +52,15 @@ public void run() {
 	private void moveToEvenColumn() {
 		if (frontIsBlocked()) {
 			if (noBeepersPresent()) {
-				turnLeft();
+				turnRight();
 				if (frontIsClear()) {
 					move();
-					turnLeft();
+					turnRight();
 					putBeeper();
 				}
 			}
 			else {
-				turnLeft();
+				turnRight();
 				if (frontIsClear()) {
 					move();
 					turnRight();
