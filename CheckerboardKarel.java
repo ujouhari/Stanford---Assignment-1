@@ -55,7 +55,7 @@ public void run() {
 				turnLeft();
 				if (frontIsClear()) {
 					move();
-					turnRight();
+					turnLeft();
 					putBeeper();
 				}
 			}
