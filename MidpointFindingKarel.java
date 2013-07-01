@@ -28,26 +28,25 @@ public class MidpointFindingKarel extends SuperKarel {
 	}
 	
 	private void reachMidpoint(){
-		while(beepersPresent()){
-		clearExtraBeepersOnLeft();
-		clearExtraBeepersOnRight();
-		}
+		
+		clearExtraBeepers();
 		putBeeper();
 		
 	}
 	
-	private void clearExtraBeepersOnLeft(){
+	private void clearExtraBeepers(){
 		turnAround();
 		pickBeeper();
-		moveToOtherSide();
-		if (noBeepersPresent()){
-			if (frontIsClear()){
-				move();
-				if(beepersPresent()){
-					pickBeeper();
-				}
-			}
+		
+		while (frontIsClear()){
+			move();
 		}
+		turnAround();
+		move();
+		moveToNextExtraBeeper();
+			
+			}
+		
 	}
 	private void moveToOtherSide(){
 		while(frontIsClear()){
@@ -55,19 +54,20 @@ public class MidpointFindingKarel extends SuperKarel {
 			
 		}
 	}
-	private void clearExtraBeepersOnRight(){
-		turnAround();
-		pickBeeper();
-		moveToOtherSide();
-		if (noBeepersPresent()){
-			if (frontIsClear()){
-				move();
-				if(beepersPresent()){
-					pickBeeper();
+	private void moveToNextExtraBeeper(){
+		
+		while (beepersPresent()){
+			move();
+		}
+		if(beepersPresent()){
+			pickBeeper();
+			move();
+			moveToNextExtraBeeper();
+			
 				}
 			}
-		}
 		
-	}
+		
+	
 	
 }
