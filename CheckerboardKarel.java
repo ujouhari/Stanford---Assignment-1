@@ -11,7 +11,125 @@ import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
 	
-	public void run(){
+public void run() {
+	
+	if(frontIsClear()){	
+		while(frontIsClear()){
+		oddColumn();
+		evenColumn();
+		}
+	}
+	else if(leftIsClear()){
+		while(leftIsClear()){
+			oddColumn();
+			evenColumn();
+			}
+
+	}
+	else {
+		while(rightIsClear()){
+			oddColumn();
+			evenColumn();
+			}
+	}
+	
+	}
+
+	private void oddColumn(){
+		turnLeft();
+		while(facingNorth()){
+			move();
+			if(frontIsClear()){
+				move();
+				putBeeper();
+			}
+			moveToEvenColumn();
+			
+			}
+		}
+	
+	
+	private void moveToEvenColumn() {
+		if (frontIsBlocked()) {
+			if (noBeepersPresent()) {
+				turnLeft();
+				if (frontIsClear()) {
+					move();
+					turnRight();
+					putBeeper();
+				}
+			}
+			else {
+				turnLeft();
+				if (frontIsClear()) {
+					move();
+					turnLeft();
+					move();
+					putBeeper();
+				}
+			}
+		}
+	}
+	
+	private void evenColumn(){
+		
+	}
+	
+}
+
+
+	
+	
+	
+	/*private void oddColumn(){
+
+	turnLeft();
+	while(frontIsClear()){
+		putBeeper();
+		safeToMove();
+		safeToMove();
+	}
+	
+	
+	
+	if (rightIsClear()){
+		turnRight();
+		if(frontIsClear()) {
+		move();
+		}
+		}
+
+	}
+	
+	private void evenColumn(){
+	turnRight();
+	while(frontIsClear()){
+		putBeeper();
+		safeToMove();
+		safeToMove();
+	}
+	
+	if (leftIsClear()){
+		turnLeft();
+		if(frontIsClear()) {
+		move();
+		}
+		}
+
+	}
+	
+	private void safeToMove(){
+		if (frontIsClear()){
+			move();
+		}
+	}	
+}
+
+
+
+
+	
+ /*public void run(){
 		putBeeper();
 		safeToMove();
 		while(frontIsClear()){
@@ -98,8 +216,7 @@ public class CheckerboardKarel extends SuperKarel {
 			
 		}
 	}
-}
-	
+*/	
 
 		/*public void run() {
 			putBeeper();
