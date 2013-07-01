@@ -7,6 +7,7 @@
  * newspaper (represented by a beeper, of course), and then return
  * to its initial position in the upper left corner of the house.
  */
+//Name:Urvashi Jouhari
 
 import stanford.karel.*;
 
@@ -21,7 +22,7 @@ public class CollectNewspaperKarel extends Karel {
 		returnToStartPoint();
 		
 	}
-	
+	//Turns Karel 90 degrees to the Right.
 	private void turnRight()   {
 		for (int i=0; i < 3; i++) {
 			turnLeft();
@@ -29,7 +30,9 @@ public class CollectNewspaperKarel extends Karel {
 	}
 	
 	
-	
+	/*Pre-condition : The Position of Karel is fixed at the right upper corner
+	 *Post-condition: Karel reaches the newspaper.
+	 */
 	private void moveToNewspaper() {
 		
 		move();
@@ -40,6 +43,10 @@ public class CollectNewspaperKarel extends Karel {
 		move();
 		
 	}
+	/*Pre-condition: The spot of the newspaper stays fixed.
+	 * 				 Karel is currently located at the spot of the newspaper. 
+	 *Post-condition:As long as a newspaper is present, Karel picks it up.
+	 */
 	
 	private void pickNewspaper() {
 		while (beepersPresent()) {
@@ -47,7 +54,9 @@ public class CollectNewspaperKarel extends Karel {
 		}
 		
 	}
-	
+	/*Pre-condition: Karel is currently located at the spot of the newspaper. 
+	 *Post-condition:Karel returns to its fixed start point.
+	 */
 	private void returnToStartPoint(){
 		
 		turnLeft();
