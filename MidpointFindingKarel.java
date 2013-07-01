@@ -2,13 +2,13 @@
  * Name:Urvashi Jouhari
  * File: MidpointFindingKarel.java
  * -------------------------------
- * When you finish writing it, the MidpointFindingKarel class should
- * leave a beeper on the corner closest to the center of 1st Street
- * (or either of the two central corners if 1st Street has an even
- * number of corners).  Karel can put down additional beepers as it
- * looks for the midpoint, but must pick them up again before it
- * stops.  The world may be of any size, but you are allowed to
- * assume that it is at least as tall as it is wide.
+ * In the program Karel does the following:
+ * Fills the first Row with beepers.
+ * Picks a beeper from the extreme left first and then the extreme right.
+ * Returns to the leftmost block that contains a beeper and picks it up. 
+ * Returns to right most block that contains a beeper and picks it up.
+ * Continues to return until it has picked up all the beepers and reached the midpoint.
+ * Places a beeper in the midpoint.
  */
 
 import stanford.karel.*;
@@ -20,6 +20,15 @@ public class MidpointFindingKarel extends SuperKarel {
 		reachMidpoint();
 	}
 	
+/*
+ * Karel fills the first row with Beepers.
+ * Pre-condition - Karel is at the left most corner of the world, facing East.
+ * 					No beepers are present anywhere in the world.
+ * Post-condition - Karel is at the right most corner of the worls, facing East.
+ * 					Beeepers are present in all the blocks of the first row.
+ * 
+ */
+	
 	private void fillRowWithBeepers(){
 		while(frontIsClear()){
 			putBeeper();
@@ -28,12 +37,16 @@ public class MidpointFindingKarel extends SuperKarel {
 		putBeeper();
 	}
 	
+//Karel reaches the mispoint and places beeper in it.
+	
 	private void reachMidpoint(){
 		
 		clearExtraBeepers();
 		putBeeper();
 		
 	}
+	
+//Karel clears all the beepers to the left and right of the midpoint.
 	
 	private void clearExtraBeepers(){
 		turnAround();
@@ -49,6 +62,7 @@ public class MidpointFindingKarel extends SuperKarel {
 			
 	}
 		
+//Karel moves to the next leftmost or rightmost spot with a Beeper present in it.
 	
 	private void moveToNextExtraBeeper(){
 		
