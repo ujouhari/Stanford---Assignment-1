@@ -63,7 +63,7 @@ public void run() {
 				turnRight();
 				if (frontIsClear()) {
 					move();
-					turnRight();
+					turnLeft();
 					move();
 					putBeeper();
 				}
