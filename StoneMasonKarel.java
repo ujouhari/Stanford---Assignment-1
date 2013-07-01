@@ -17,7 +17,10 @@ public class StoneMasonKarel extends SuperKarel {
 	public void run() {
 		fixArch();
 	}
-		
+	
+/*Pre-condition:Karel is at startpoint, facing East.
+ *Post-condition:Karel has fixes all arches and is at the extreme corner of the last arch, facing East. 		
+ */
 	private void fixArch() {
 		turnLeft();
 		replaceMissingStones();
@@ -26,6 +29,8 @@ public class StoneMasonKarel extends SuperKarel {
 			moveToNextArch();
 		}
 	}
+	
+//Karel replaces all the missing stones in an arch.
 	
 	private void replaceMissingStones(){
 		while(frontIsClear()){
@@ -39,13 +44,19 @@ public class StoneMasonKarel extends SuperKarel {
 			putBeeper();
 		}
 	}
-	
+/*Pre-condition: Karel has fixed all the missing stones in the arch and has reached the top of the arch.
+ * Post-condition: Karel turns back around and returns to the start point of the arch.	
+ */
 	private void moveBackward(){
 		turnAround();
 		CheckForWall();
 		turnLeft();
 		
 	}
+	
+/*Since all arches are assumed to be at a distance of four, Karel moves to the next arch by moving four blocks.
+ *Once Karel reaches the next arch, it proceeds to fix it. 	
+ */
 	private void moveToNextArch(){
 		if (frontIsClear()){
 		for (int i=0;i<=3;i++){
@@ -57,7 +68,7 @@ public class StoneMasonKarel extends SuperKarel {
 		fixArch();
 		}
 		
-		
+//Karel checks if there is a wall ahead. 		
 	}
 	private void CheckForWall(){
 		while (frontIsClear()){
