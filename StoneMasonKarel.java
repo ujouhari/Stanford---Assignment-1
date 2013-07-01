@@ -35,8 +35,7 @@ public class StoneMasonKarel extends SuperKarel {
 		moveBackward();
 		
 		if (frontIsClear()){
-		
-		moveToNextArch();
+			moveToNextArch();
 		}
 	}
 	
@@ -53,8 +52,9 @@ public class StoneMasonKarel extends SuperKarel {
 			move();
 			}
 		}
-		}
 		fixArch();
+		}
+		
 		
 	}
 	private void CheckForWall(){
