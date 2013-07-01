@@ -56,9 +56,9 @@ public class MidpointFindingKarel extends SuperKarel {
 			pickBeeper();
 			while(beepersPresent()){
 			move();
-			}
 			turnAround();
 			move();
+			}
 			moveToNextExtraBeeper();
 			
 				}
