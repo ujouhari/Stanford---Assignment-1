@@ -51,9 +51,9 @@ public class StoneMasonKarel extends SuperKarel {
 			if(frontIsClear()){
 			move();
 			}
-			fixArch();
-		}
 		
+		}
+		fixArch();
 		}
 		
 		
