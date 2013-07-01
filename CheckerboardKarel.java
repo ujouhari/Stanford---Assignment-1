@@ -40,15 +40,22 @@ public void run() {
 	private void oddColumn(){
 		
 		while(facingNorth()){
-			move();
 			if(frontIsClear()){
 				move();
-				putBeeper();
-			}
+				if(frontIsClear()){
+					move();
+					putBeeper();
+				}
+				
+			else{
+				evenColumn();
+				}
+				
 			moveToEvenColumn();
 			
 			}
 		}
+	}
 	
 	
 	private void moveToEvenColumn() {
