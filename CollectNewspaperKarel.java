@@ -1,4 +1,5 @@
 /*
+ * Name:Urvashi Jouhari
  * File: CollectNewspaperKarel.java
  * --------------------------------
  * At present, the CollectNewspaperKarel subclass does nothing.
@@ -7,7 +8,6 @@
  * newspaper (represented by a beeper, of course), and then return
  * to its initial position in the upper left corner of the house.
  */
-//Name:Urvashi Jouhari
 
 import stanford.karel.*;
 
