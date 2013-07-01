@@ -27,12 +27,17 @@ public void run() {
 		turnRight();
 		putBeeper();
 		while(frontIsClear()){
-			oddColumn();
-			evenColumn();
+			if(frontIsClear()){
+				move();
+				if(frontIsClear()){
+					move();
+					putBeeper();
+				}
 			}
-	}
+		}
 	
 	}
+}	
 
 	private void oddColumn(){
 		
