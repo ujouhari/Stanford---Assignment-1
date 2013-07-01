@@ -20,22 +20,23 @@ public class StoneMasonKarel extends SuperKarel {
 		
 	private void fixArch() {
 		turnLeft();
-		
-			while(frontIsClear()){
-				if (noBeepersPresent()){
-					putBeeper();
-				}
-				
-				move();
-			}
+		replaceMissingStones();
+		moveBackward();
+		if (frontIsClear()){
+			moveToNextArch();
+		}
+	}
+	
+	private void replaceMissingStones(){
+		while(frontIsClear()){
 			if (noBeepersPresent()){
 				putBeeper();
 			}
-		
-		moveBackward();
-		
-		if (frontIsClear()){
-			moveToNextArch();
+			
+			move();
+		}
+		if (noBeepersPresent()){
+			putBeeper();
 		}
 	}
 	
