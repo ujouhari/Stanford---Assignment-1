@@ -27,7 +27,6 @@ public void run() {
 		turnRight();
 		putBeeper();
 		while(rightIsClear()){
-			oddColumn();
 			evenColumn();
 			}
 	}
